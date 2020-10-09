@@ -411,7 +411,7 @@ function generate_benchmark_definition(eval_module, out_vars, setup_vars, core, 
                  push!(trial, $(samplefunc)(params)[1:end-1]...)
                  iters += 1
             end
-            return sort!(trial), return_val
+            return trial, return_val
         end
         $BenchmarkTools.Benchmark{$(id)}($(params))
     end)
